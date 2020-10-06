@@ -1,0 +1,20 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class csRotateMove : MonoBehaviour
+{
+    public float movSpeed = 20f;
+    public float rotSpeed = 120f;
+    void Update()
+    {
+        float h = 0.5f;
+        float v = 0.1f;
+
+        h = h * rotSpeed * Time.deltaTime;
+        v = v * movSpeed * Time.deltaTime;
+
+        transform.Translate((Vector3.forward*10) * v);
+        transform.Rotate(Vector3.up * h);
+    }
+}
